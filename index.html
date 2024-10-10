@@ -1,41 +1,168 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Your Name - Portfolio</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Personal Homepage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #0f0f0f;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        .container {
+            display: flex;
+            min-height: 100vh;
+            position: relative;
+        }
+        .left-panel {
+            flex: 1;
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .right-panel {
+            flex: 2;
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #1a1a1a;
+        }
+        .profile-img {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            border: 6px solid rgba(255,255,255,0.3);
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.8rem;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .job-title, .degree {
+            margin: 0.5rem 0;
+            font-size: 1.3rem;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+        .description {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 20px;
+        }
+        .description::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            height: calc(100% - 20px);
+            width: 3px;
+            background: linear-gradient(180deg, #00c6ff, #0072ff);
+        }
+        .typing-effect {
+            overflow: hidden;
+            border-right: .15em solid #00c6ff;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .10em;
+            animation: 
+                typing 3.5s steps(40, end),
+                blink-caret .75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #00c6ff; }
+        }
+        .social-icons {
+            margin-top: 2rem;
+        }
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: #00c6ff;
+        }
+        .background-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+            background: linear-gradient(45deg, #00c6ff, #0072ff);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 </head>
 <body>
-    <div class="sidebar">
-        <img src="path_to_your_photo.jpg" alt="Your Name" class="profile-image">
-        <nav>
-            <a href="#education">Education</a>
-            <a href="#work-experience">Work Experience</a>
-            <a href="#projects">Projects</a>
-            <a href="#hobbies">Hobbies</a>
-            <a href="#achievements">Achievements</a>
-        </nav>
-    </div>
-    <div class="main-content">
-        <section id="education">
-            <h1>Education</h1>
-            <!-- Content about your education -->
-        </section>
-        <section id="work-experience">
-            <h1>Work Experience</h1>
-            <!-- Content about your work experience -->
-        </section>
-        <section id="projects">
-            <h1>Projects</h1>
-            <!-- Content about your projects -->
-        </section>
-        <section id="hobbies">
-            <h1>Hobbies</h1>
-            <!-- Content about your hobbies -->
-        </section>
-        <section id="achievements">
-            <h1>Achievements</h1>
-            <!-- Content about your achievements -->
-        </section>
+    <div class="container">
+        <div class="left-panel">
+            <div class="background-animation"></div>
+            <div class="content">
+                <img src="/api/placeholder/220/220" alt="Your Name" class="profile-img">
+                <h1>Your Name</h1>
+                <p class="job-title">Current Job Title</p>
+                <p class="degree">Your Degree</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="right-panel">
+            <p class="description typing-effect">
+                Hello! I'm a passionate [your profession] with a keen interest in [your interests].
+            </p>
+            <p class="description">
+                I specialize in [your key skills or areas of expertise]. My approach combines creativity with analytical thinking to solve complex problems and drive innovation.
+            </p>
+            <p class="description">
+                When I'm not immersed in [your field], you can find me [your hobbies or interests outside of work]. I believe in continuous learning and always strive to push the boundaries of what's possible.
+            </p>
+            <p class="description">
+                I'm always open to discussing [relevant topics] or exploring potential collaborations. Let's connect and create something amazing together!
+            </p>
+        </div>
     </div>
 </body>
 </html>
