@@ -3,32 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Personal Portfolio</title>
+    <title>Your Name - Web Developer & Designer</title>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <!-- Font Awesome for Social Icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" defer></script>
 </head>
 <body>
-    <div class="container">
-        <div class="background">
-            <div class="cube"></div>
-            <div class="cube"></div>
-            <div class="cube"></div>
-            <div class="cube"></div>
-            <div class="cube"></div>
-        </div>
-        <header>
-            <nav>
-                <ul>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="#home" class="logo">YourName</a>
+                <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-            </nav>
-        </header>
-        <main>
-            <section id="home" class="hero">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
                 <div class="profile-card">
                     <img src="/api/placeholder/250/250" alt="Your Name" class="profile-img">
                     <h1 class="name">Your Name</h1>
@@ -39,28 +44,94 @@
                         <a href="#"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
-            </section>
-            <section id="about" class="about">
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
                 <h2>About Me</h2>
-                <p class="bio">I'm a passionate web developer and designer with a keen eye for creating beautiful, functional websites. With a background in both front-end and back-end development, I bring a holistic approach to every project.</p>
-            </section>
-            <section id="skills" class="skills">
+                <p class="bio">
+                    I'm a passionate web developer and designer with a keen eye for creating beautiful, functional websites. With a background in both front-end and back-end development, I bring a holistic approach to every project.
+                </p>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <div class="container">
                 <h2>My Skills</h2>
                 <div class="skill-grid">
-                    <div class="skill-item" style="--i:1;">HTML5</div>
-                    <div class="skill-item" style="--i:2;">CSS3</div>
-                    <div class="skill-item" style="--i:3;">JavaScript</div>
-                    <div class="skill-item" style="--i:4;">React</div>
-                    <div class="skill-item" style="--i:5;">Node.js</div>
-                    <div class="skill-item" style="--i:6;">UI/UX Design</div>
+                    <div class="skill-item">HTML5</div>
+                    <div class="skill-item">CSS3</div>
+                    <div class="skill-item">JavaScript</div>
+                    <div class="skill-item">React</div>
+                    <div class="skill-item">Node.js</div>
+                    <div class="skill-item">UI/UX Design</div>
                 </div>
-            </section>
-            <section id="contact" class="contact">
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2>My Projects</h2>
+                <div class="project-grid">
+                    <!-- Example Project -->
+                    <div class="project-item">
+                        <img src="path-to-project-image.jpg" alt="Project Title" class="project-img">
+                        <h3>Project Title</h3>
+                        <p>Short description of the project.</p>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                    <!-- Repeat for more projects -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
                 <h2>Get In Touch</h2>
                 <p>I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
                 <a href="mailto:your.email@example.com" class="cta-button">Contact Me</a>
-            </section>
-        </main>
-    </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Your Name. All rights reserved.</p>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Optional: Smooth Scroll Script -->
+    <script>
+        // Toggle Hamburger Menu
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+            hamburger.classList.toggle('active');
+        });
+
+        // Smooth Scrolling
+        const links = document.querySelectorAll('a[href^="#"]');
+        for (const link of links) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        }
+    </script>
 </body>
 </html>
