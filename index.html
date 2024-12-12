@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        /* Modern color scheme and fonts */
         :root {
-            --primary-color: #2d3436;
-            --secondary-color: #0984e3;
-            --background-color: #ffffff;
-            --text-color: #2d3436;
+            --sidebar-width: 280px;
+            --bg-primary: #1a1f2e;
+            --bg-secondary: #242b3d;
+            --accent-color: #64ffda;
+            --text-primary: #e6f1ff;
+            --text-secondary: #8892b0;
+            --hover-color: #64ffda;
         }
 
         * {
@@ -21,181 +24,218 @@
         }
 
         body {
-            background-color: var(--background-color);
-            color: var(--text-color);
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
             line-height: 1.6;
-        }
-
-        /* Navigation */
-        nav {
-            background-color: var(--primary-color);
-            padding: 1rem;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav ul {
-            list-style: none;
             display: flex;
-            justify-content: center;
-            gap: 2rem;
         }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--secondary-color);
-        }
-
-        /* Sections */
-        section {
-            padding: 5rem 2rem;
-            min-height: 100vh;
+        /* Sidebar Styling */
+        .sidebar {
+            width: var(--sidebar-width);
+            height: 100vh;
+            position: fixed;
+            background-color: var(--bg-secondary);
+            padding: 2rem;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
         }
 
-        /* Hero Section */
-        #hero {
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-            color: white;
+        .profile-section {
             text-align: center;
-        }
-
-        .hero-content {
-            max-width: 800px;
-        }
-
-        .hero-content h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
             margin-bottom: 2rem;
         }
 
-        /* About Section */
-        #about {
-            background-color: #f5f6fa;
-        }
-
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            width: 100%;
-        }
-
-        .project-card {
-            background: white;
-            border-radius: 10px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-
-        /* Contact Section */
-        #contact {
-            background-color: #f5f6fa;
-        }
-
-        .contact-form {
-            max-width: 600px;
-            width: 100%;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 0.8rem;
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
             margin-bottom: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            object-fit: cover;
+            border: 3px solid var(--accent-color);
         }
 
-        .btn {
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 0.8rem 2rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
+        .profile-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
         }
 
-        .btn:hover {
-            background-color: #0873c5;
+        .profile-title {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Navigation Menu */
+        .nav-menu {
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            padding: 0.8rem 1rem;
+            margin: 0.5rem 0;
+            border-radius: 8px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            background-color: transparent;
+        }
+
+        .nav-item:hover {
+            background-color: rgba(100, 255, 218, 0.1);
+            color: var(--accent-color);
+        }
+
+        .nav-item.active {
+            background-color: rgba(100, 255, 218, 0.1);
+            color: var(--accent-color);
+        }
+
+        /* Main Content Area */
+        .main-content {
+            margin-left: var(--sidebar-width);
+            padding: 3rem 4rem;
+            width: calc(100% - var(--sidebar-width));
+            background-color: var(--bg-primary);
+        }
+
+        /* About Section */
+        .about-section {
+            max-width: 900px;
+        }
+
+        .about-header {
+            font-size: 2.5rem;
+            margin-bottom: 2.5rem;
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .about-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Social Links in Sidebar */
+        .social-links {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 0 1rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: var(--accent-color);
+        }
+
+        .social-link i {
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Subtle Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--text-secondary);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-color);
         }
     </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <section id="hero">
-        <div class="hero-content">
-            <h1>Dheeraj P Anikar</h1>
-            <p>AI Engineer | AI-Safety & Governance| Conversational AI | UTR 3.5 Tennis Player </p>
-            <img src="/api/placeholder/150/150" alt="Profile Picture" style="border-radius: 50%; margin: 2rem 0;">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="profile-section">
+            <img src="/api/placeholder/150/150" alt="Profile Picture" class="profile-image">
+            <h2 class="profile-name">Your Name</h2>
+            <p class="profile-title">Web Developer & Designer</p>
         </div>
-    </section>
+        
+        <nav class="nav-menu">
+            <a href="#about" class="nav-item active">About Me</a>
+            <a href="#cv" class="nav-item">CV</a>
+            <a href="#projects" class="nav-item">Projects</a>
+            <a href="#fun" class="nav-item">Fun Me</a>
+        </nav>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <div style="max-width: 800px; margin: 2rem 0;">
-            <p>Hello! I'm a passionate AI Engineer and an aspiring researcher, who loves building, researching, learning all things AI. I care about safety and governance, and visualize myself as a leader in the governance space in the future. Love tennis as well.</p>
+        <!-- Social Links -->
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/yourprofile" class="social-link" target="_blank">
+                <i class="fab fa-linkedin"></i>
+                LinkedIn
+            </a>
+            <a href="https://github.com/yourusername" class="social-link" target="_blank">
+                <i class="fab fa-github"></i>
+                GitHub
+            </a>
+            <a href="https://medium.com/@yourusername" class="social-link" target="_blank">
+                <i class="fab fa-medium"></i>
+                Medium
+            </a>
+            <a href="mailto:your.email@example.com" class="social-link">
+                <i class="fas fa-envelope"></i>
+                Email
+            </a>
+            <span class="social-link">
+                <i class="fas fa-map-marker-alt"></i>
+                Your Location
+            </span>
         </div>
-    </section>
+    </aside>
 
-    <section id="projects">
-        <h2>My Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3>Project 1</h3>
-                <p>Description of your amazing project goes here.</p>
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- About Section -->
+        <div class="about-section">
+            <h1 class="about-header">About Me</h1>
+            <div class="about-text">
+                <p>Hello! I'm a passionate developer who loves creating beautiful and functional websites. I specialize in front-end development and enjoy turning complex problems into simple, beautiful solutions.</p>
+                <p>With a background in [Your Background], I bring a unique perspective to every project I work on. I believe in clean code, user-centered design, and continuous learning.</p>
             </div>
-            <div class="project-card">
-                <h3>Project 2</h3>
-                <p>Description of your amazing project goes here.</p>
-            </div>
-            <div class="project-card">
-                <h3>Project 3</h3>
-                <p>Description of your amazing project goes here.</p>
-            </div>
         </div>
-    </section>
+    </main>
 
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <div class="contact-form">
-            <input type="text" placeholder="Your Name">
-            <input type="email" placeholder="Your Email">
-            <textarea rows="5" placeholder="Your Message"></textarea>
-            <button class="btn">Send Message</button>
-        </div>
-    </section>
+    <script>
+        // Simple navigation handling
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
