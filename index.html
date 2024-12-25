@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Dheeraj Anikar - Portfolio</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
@@ -30,7 +30,6 @@
             display: flex;
         }
 
-        /* Sidebar Styling */
         .sidebar {
             width: var(--sidebar-width);
             height: 100vh;
@@ -57,20 +56,6 @@
             border: 3px solid var(--accent-color);
         }
 
-        .profile-name {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-        }
-
-        .profile-title {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin-bottom: 2rem;
-        }
-
-        /* Navigation Menu */
         .nav-menu {
             width: 100%;
             margin-bottom: 2rem;
@@ -88,49 +73,87 @@
             background-color: #2d4f4d;
         }
 
-        .nav-item:hover {
+        .nav-item:hover, .nav-item.active {
             background-color: #3a6663;
             color: var(--text-primary);
         }
 
-        .nav-item.active {
-            background-color: #3a6663;
-            color: var(--text-primary);
-        }
-
-        /* Main Content Area */
         .main-content {
             margin-left: var(--sidebar-width);
             padding: 3rem 4rem;
             width: calc(100% - var(--sidebar-width));
-            background-color: var(--bg-primary);
         }
 
-        /* About Section */
-        .about-section {
+        .content-section {
+            display: none;
             max-width: 900px;
+            margin: 0 auto;
         }
 
-        .about-header {
+        .content-section.active {
+            display: block;
+        }
+
+        .section-header {
             font-size: 2rem;
             margin-bottom: 2rem;
             color: var(--accent-color);
             font-weight: 500;
-            letter-spacing: -0.5px;
         }
 
-        .about-text {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: var(--text-secondary);
-            font-weight: 300;
+        .cv-container {
+            background-color: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
         }
 
-        .about-text p {
+        .cv-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .cv-section {
+            margin-bottom: 2rem;
+        }
+
+        .cv-section h2 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .experience-item, .education-item {
             margin-bottom: 1.5rem;
         }
 
-        /* Social Links in Sidebar */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .institution-logo {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+        }
+
+        .download-cv {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--bg-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .download-cv:hover {
+            background-color: #4fd1b3;
+        }
+
         .social-links {
             width: 100%;
             display: flex;
@@ -145,7 +168,6 @@
             gap: 0.8rem;
             color: var(--text-secondary);
             text-decoration: none;
-            font-size: 1rem;
             transition: all 0.3s ease;
         }
 
@@ -157,28 +179,9 @@
             width: 20px;
             text-align: center;
         }
-
-        /* Subtle Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--bg-secondary);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--text-secondary);
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--accent-color);
-        }
     </style>
 </head>
 <body>
-    <!-- Sidebar -->
     <aside class="sidebar">
         <div class="profile-section">
             <img src="/images/IMG_6085.jpg" alt="Profile Picture" class="profile-image">
@@ -187,56 +190,130 @@
         </div>
         
         <nav class="nav-menu">
-            <a href="#about" class="nav-item active">About Me</a>
-            <a href="#cv" class="nav-item">CV</a>
-            <a href="#projects" class="nav-item">Projects</a>
-            <a href="#fun" class="nav-item">Fun Me</a>
+            <a href="#about" class="nav-item active" data-section="about">About Me</a>
+            <a href="#cv" class="nav-item" data-section="cv">CV</a>
+            <a href="#projects" class="nav-item" data-section="projects">Projects</a>
+            <a href="#fun" class="nav-item" data-section="fun">Fun Me</a>
         </nav>
 
-        <!-- Social Links -->
         <div class="social-links">
             <a href="https://www.linkedin.com/in/dheerajpanikar" class="social-link" target="_blank">
-                <i class="fab fa-linkedin"></i>
-                LinkedIn
+                <i class="fab fa-linkedin"></i>LinkedIn
             </a>
             <a href="https://github.com/dheerajanikar" class="social-link" target="_blank">
-                <i class="fab fa-github"></i>
-                GitHub
+                <i class="fab fa-github"></i>GitHub
             </a>
             <a href="https://medium.com/@yourusername" class="social-link" target="_blank">
-                <i class="fab fa-medium"></i>
-                Medium
+                <i class="fab fa-medium"></i>Medium
             </a>
             <a href="mailto:dheerajanikar.12@gmail.com" class="social-link">
-                <i class="fas fa-envelope"></i>
-                Email
+                <i class="fas fa-envelope"></i>Email
             </a>
             <span class="social-link">
-                <i class="fas fa-map-marker-alt"></i>
-                Your Location
+                <i class="fas fa-map-marker-alt"></i>Your Location
             </span>
         </div>
     </aside>
 
-    <!-- Main Content -->
     <main class="main-content">
-        <!-- About Section -->
-        <div class="about-section">
-            <h1 class="about-header">About Me</h1>
+        <section id="about" class="content-section active">
+            <h1 class="section-header">About Me</h1>
             <div class="about-text">
                 <p>Hey there! 👋 I'm an AI Engineer who's equally passionate about making AI systems smarter and ensuring they don't accidentally decide to redecorate the planet. When I'm not implementing RAG-based agents or fine-tuning LLMs, you'll find me diving deep into AI governance and safety discussions – because someone needs to make sure our AI assistants don't get too creative with their interpretations of "help humanity."</p>
                 <p>Armed with a Master's in Electrical Engineering from USC (Fight On! ✌️) and a track record of building containment-crushing chatbots at Eltropy, I'm on a mission to bridge the gap between cutting-edge AI capabilities and responsible implementation. Think of me as the person who asks "Should we?" right after someone says "We can!"</p>
                 <p>Off the keyboard, I'm a tennis enthusiast with a 3.5 UTR rating (still working on my Djokovic-inspired flexibility – turns out becoming a human rubber band is harder than it looks 🎾). I'm also a regular at AI safety conferences, where I contribute to discussions about keeping our AI systems as well-behaved as a tennis player during a quiet play point.</p>
             </div>
-        </div>
+        </section>
+
+        <section id="cv" class="content-section">
+            <h1 class="section-header">Curriculum Vitae</h1>
+            <a href="path-to-your-cv.pdf" class="download-cv" download>
+                <i class="fas fa-download"></i> Download CV
+            </a>
+            
+            <div class="cv-container">
+                <div class="cv-section">
+                    <h2>Experience</h2>
+                    <div class="experience-item">
+                        <div class="logo-container">
+                            <img src="/path-to-eltropy-logo.png" alt="Eltropy Logo" class="institution-logo">
+                            <div>
+                                <h3>AI Engineer @ Eltropy</h3>
+                                <span>2022 - Present</span>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>Developed and deployed RAG-based chatbot systems</li>
+                            <li>Implemented fine-tuning pipelines for LLMs</li>
+                            <li>Led AI safety initiatives and responsible AI development practices</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="cv-section">
+                    <h2>Education</h2>
+                    <div class="education-item">
+                        <div class="logo-container">
+                            <img src="/path-to-usc-logo.png" alt="USC Logo" class="institution-logo">
+                            <div>
+                                <h3>University of Southern California</h3>
+                                <p>Master's in Electrical Engineering</p>
+                                <span>2021</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cv-section">
+                    <h2>Skills</h2>
+                    <div class="skills-grid">
+                        <div>
+                            <h3>AI/ML</h3>
+                            <ul>
+                                <li>Large Language Models</li>
+                                <li>RAG Systems</li>
+                                <li>Neural Networks</li>
+                                <li>Machine Learning</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Programming</h3>
+                            <ul>
+                                <li>Python</li>
+                                <li>PyTorch</li>
+                                <li>TensorFlow</li>
+                                <li>SQL</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="content-section">
+            <h1 class="section-header">Projects</h1>
+            <!-- Add your projects content here -->
+        </section>
+
+        <section id="fun" class="content-section">
+            <h1 class="section-header">Fun Me</h1>
+            <!-- Add your fun content here -->
+        </section>
     </main>
 
     <script>
-        // Simple navigation handling
         document.querySelectorAll('.nav-item').forEach(item => {
             item.addEventListener('click', function(e) {
-                document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+                e.preventDefault();
+                const sectionId = this.getAttribute('data-section');
+                
+                // Update navigation
+                document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
                 this.classList.add('active');
+                
+                // Update content sections
+                document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
+                document.getElementById(sectionId).classList.add('active');
             });
         });
     </script>
