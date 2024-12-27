@@ -255,6 +255,8 @@
             background-color: #555;
         }
 
+        
+
         /* ------------------------------
            Main Content Styles
         ------------------------------ */
@@ -409,26 +411,31 @@
             background-color: #4fd1b3;
         }
 
-        .social-links {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            padding: 0 1rem;
-        }
-
+        /* Social Links Container */
+        /* Optional: Adding a Circular Background to Icons */
         .social-link {
+            position: relative;
             display: flex;
             align-items: center;
-            gap: 0.8rem;
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: all 0.3s ease;
+            justify-content: center;
+        }
+        
+        .social-link::before {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+            transition: background-color 0.3s ease;
+            z-index: -1; /* Places the background behind the icon */
+        }
+        
+        .social-link:hover::before {
+            background-color: rgba(255, 255, 255, 0.2); /* Darker background on hover */
         }
 
-        .social-link:hover {
-            color: var(--accent-color);
-        }
+
 
         .social-link i {
             width: 20px;
@@ -495,6 +502,28 @@
             <a href="#fun" class="nav-button" data-section="fun">
                 <i class="fas fa-smile"></i><span>Fun Me</span>
             </a>
+        </div>
+
+
+
+        <div id="nav-footer">
+            <div id="nav-footer-avatar">
+        
+            <!-- Social Links Section -->
+            <div class="social-links">
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/your-linkedin-username" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <!-- Medium -->
+                <a href="https://medium.com/@your-medium-username" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Medium">
+                    <i class="fab fa-medium"></i>
+                </a>
+                <!-- Gmail -->
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=your-email@example.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Gmail">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
         </div>
 
         
