@@ -377,6 +377,17 @@
         .experience-item, .education-item {
             margin-bottom: 1.5rem;
         }
+        
+        .about-profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-color);
+            display: block;
+            margin: 0 auto 20px auto;
+        }
+
 
         .logo-container {
             display: flex;
@@ -470,10 +481,6 @@
     <div id="nav-bar">
         <!-- Navbar Header -->
         <div id="nav-header">
-            <!-- Profile Image -->
-            <img src="/images/IMG_6085.jpg" alt="Profile Picture" class="navbar-profile-image">
-            <!-- Profile Tag -->
-            <span class="navbar-profile-tag">AI Engineering and AI Governance</span>
             <!-- Toggle Button -->
             <label for="nav-toggle">
                 <span id="nav-toggle-burger"></span>
@@ -504,6 +511,7 @@
     <main class="main-content">
         <section id="about" class="content-section active">
             <h1 class="section-header">About Me</h1>
+            <img src="/images/IMG_6085.jpg" alt="Profile Picture" class="about-profile-image">
             <div class="about-text">
                 <p>Hey there! 👋 I'm an AI Engineer who's equally passionate about making AI systems smarter and ensuring they don't accidentally decide to redecorate the planet. When I'm not implementing RAG-based agents or fine-tuning LLMs, you'll find me diving deep into AI governance and safety discussions – because someone needs to make sure our AI assistants don't get too creative with their interpretations of "help humanity."</p>
                 <p>Armed with a Master's in Electrical Engineering from USC (Fight On! ✌️) and a track record of building containment-crushing chatbots at Eltropy, I'm on a mission to bridge the gap between cutting-edge AI capabilities and responsible implementation. Think of me as the person who asks "Should we?" right after someone says "We can!"</p>
