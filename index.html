@@ -170,6 +170,36 @@
             text-align: center;
         }
 
+        /* Profile Image */
+        .navbar-profile-image {
+            width: 100px; /* Adjust as needed */
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--navbar-light-primary);
+            margin-bottom: 10px;
+        }
+
+        /* Profile Tag */
+        .navbar-profile-tag {
+            font-size: 0.9rem;
+            color: var(--navbar-light-secondary);
+            text-align: center;
+            margin-bottom: 10px;
+            transition: opacity 0.2s;
+        }
+
+        /* Toggle Button */
+        label[for="nav-toggle"] {
+            position: absolute;
+            top: 20px;
+            right: 16px;
+        /* ... */
+        }
+
+
+
+
         .nav-button:hover,
         .nav-button.active {
             background: var(--navbar-dark-secondary);
@@ -467,16 +497,7 @@
             </a>
         </div>
 
-        <!-- Navbar Footer -->
-        <div id="nav-footer">
-            <div id="nav-footer-avatar">
-                <img src="/images/IMG_6085.jpg" alt="Profile Picture">
-            </div>
-            <div id="nav-footer-titlebox">
-                <a id="nav-footer-title" href="https://codepen.io/uahnbu/pens/public" target="_blank">Dheeraj Anikar</a>
-                <span id="nav-footer-subtitle">AI Engineering and AI Governance</span>
-            </div>
-        </div>
+        
     </div>
 
     <!-- Main Content -->
