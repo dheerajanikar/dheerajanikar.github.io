@@ -29,29 +29,63 @@
             <h2>Projects</h2>
             
             <div class="projects-grid">
-                <!-- Project cards will go here -->
-                <div class="project-card placeholder">
+                <div class="project-card">
                     <div class="project-icon">
-                        <i class="fas fa-robot"></i>
+                        <i class="fas fa-scale-balanced"></i>
                     </div>
-                    <h3>Project 1</h3>
-                    <p>Project description coming soon...</p>
+                    <h3>RAG-based Regulation Policy Evaluation System</h3>
+                    <div class="project-meta">
+                        <span class="project-date">September 2024</span>
+                        <span class="project-achievement">Stanford - LLMxLaw Hackathon, Runner-up</span>
+                    </div>
+                    <div class="project-description">
+                        <p>Developed a RAG engine to combine the power of large language models with a dynamic knowledge base of federal regulations.</p>
+                        <ul class="project-details">
+                            <li>Integrated <span class="tech-tag">Pinecone</span> as the vector database for storage and retrieval of document embeddings</li>
+                            <li>Utilized Pinecone's similarity search capabilities to quickly identify the most relevant regulatory sections</li>
+                            <li>Incorporated <span class="tech-tag">Cohere AI</span>'s reranking model to further refine search results</li>
+                            <li>Enhanced overall quality of responses using semantic understanding capabilities</li>
+                        </ul>
+                    </div>
                 </div>
                 
-                <div class="project-card placeholder">
+                <div class="project-card">
                     <div class="project-icon">
-                        <i class="fas fa-brain"></i>
+                        <i class="fas fa-database"></i>
                     </div>
-                    <h3>Project 2</h3>
-                    <p>Project description coming soon...</p>
+                    <h3>SQL Query Assistant: Semantic-Driven Generation using Multi-Agent Systems</h3>
+                    <div class="project-meta">
+                        <span class="project-date">September 2024</span>
+                    </div>
+                    <div class="project-description">
+                        <p>Built a proof-of-concept system using <span class="tech-tag">LangGraph</span> to generate and improve SQL queries through iterative prompt refinement.</p>
+                        <p><strong>Implemented three collaborative agents:</strong></p>
+                        <ul class="project-details">
+                            <li><strong>Query Generator:</strong> Converts natural language to SQL using context-aware prompting</li>
+                            <li><strong>Evaluator:</strong> Checks query structure and identifies common inefficiencies</li>
+                            <li><strong>Optimizer:</strong> Refines prompts based on pattern recognition from successful queries</li>
+                        </ul>
+                        <p>Demonstrated <span class="metric">15%</span> improvement in query correctness compared to direct LLM generation on a test set of 50 common database operations.</p>
+                    </div>
                 </div>
                 
-                <div class="project-card placeholder">
+                <div class="project-card">
                     <div class="project-icon">
-                        <i class="fas fa-microchip"></i>
+                        <i class="fas fa-comment-dots"></i>
                     </div>
-                    <h3>Project 3</h3>
-                    <p>Project description coming soon...</p>
+                    <h3>Fine-Tuning Llama-2 and Llama-3 LLMs for FAQ Generation</h3>
+                    <div class="project-meta">
+                        <span class="project-date">March 2024</span>
+                    </div>
+                    <div class="project-description">
+                        <p>Devised a FAQ generation system in <span class="tech-tag">PyTorch</span> through the fine-tuning of <span class="tech-tag">Llama-2-7B</span> and <span class="tech-tag">Llama-3-8B</span> LLMs.</p>
+                        <ul class="project-details">
+                            <li>Applied <span class="tech-tag">Quantized-Low Rank Adaptation</span> technique (Q-LoRa) to efficiently fine-tune the models in resource-constrained environments</li>
+                            <li>Formulated a prompt-based learning strategy to enhance contextual understanding</li>
+                            <li>Benchmarked the fine-tuned Llama models against <span class="tech-tag">Google's Flan T5-Large</span> and <span class="tech-tag">Meta's BART</span></li>
+                            <li>Attained a <span class="tech-tag">BERT Score</span> of ~0.8, signifying high fidelity in semantic similarity compared to human-written answers</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
