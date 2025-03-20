@@ -5,14 +5,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'IBM Plex Mono', sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
 body {
-    background-color: #f4f4f4;
-    color: #333;
-    text-align: center;
-    padding: 2rem;
+    background-color: #1e1e1e;
+    color: #64ffda;
+    padding: 1.5rem 0;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    
 }
 
 /* -------------------------------
@@ -29,12 +31,23 @@ header {
    Section Styling
 ------------------------------- */
 section {
-    background: white;
+    
+    background: #1e1e1e;
+    border: 1px solid #333;
+    color: #d1d1d1;
     padding: 2rem;
     margin: 2rem auto;
     max-width: 800px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#about p {
+    font-family: 'Courier New', monospace;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 4px;
+    display: inline-block;
 }
 
 h2 {
