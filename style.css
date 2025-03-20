@@ -324,7 +324,7 @@ section p {
 }
 
 .cv-section {
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     padding: 1.5rem;
     background: rgba(20, 25, 30, 0.5);
     border-radius: 12px;
@@ -333,21 +333,132 @@ section p {
 
 .cv-section h3 {
     color: #0EA5E9;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     font-size: 1.3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.5rem;
 }
 
-.coming-soon {
-    text-align: center;
+.cv-section h4 {
+    color: #f5f5f5;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.education-item, .experience-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.education-item:last-child, .experience-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.edu-header, .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.edu-date, .exp-date {
+    font-size: 0.9rem;
     color: #94a3b8;
     font-style: italic;
-    margin: 2rem 0;
+}
+
+.edu-degree, .exp-title {
+    color: #d1d5db;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.edu-gpa {
+    color: #10B981;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.edu-courses {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.cv-label {
+    font-weight: 500;
+    color: #d1d5db;
+}
+
+.exp-duties {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.exp-duties li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: #94a3b8;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.exp-duties li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: #0EA5E9;
+}
+
+.skill-tag {
+    color: #0EA5E9;
+    font-weight: 500;
+}
+
+.highlight-metric {
+    color: #10B981;
+    font-weight: 600;
+}
+
+.skills-group {
+    margin-bottom: 1.5rem;
+}
+
+.skills-group h4 {
+    color: #d1d5db;
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.skill-item {
+    background: rgba(14, 165, 233, 0.1);
+    color: #d1d5db;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(14, 165, 233, 0.3);
+    transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+    background: rgba(14, 165, 233, 0.2);
+    transform: translateY(-2px);
 }
 
 /* Projects Page Styles */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
 }
@@ -355,9 +466,12 @@ section p {
 .project-card {
     background: rgba(20, 25, 30, 0.5);
     border-radius: 12px;
-    padding: 1.5rem;
+    padding: 1.8rem;
     border: 1px solid rgba(255, 255, 255, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card:hover {
@@ -373,24 +487,72 @@ section p {
     height: 60px;
     background: linear-gradient(135deg, #4F46E5, #0EA5E9);
     border-radius: 12px;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
     font-size: 1.8rem;
     color: white;
 }
 
 .project-card h3 {
     color: #f5f5f5;
-    margin-bottom: 0.8rem;
-    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.4;
 }
 
-.project-card p {
+.project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+}
+
+.project-date {
     color: #94a3b8;
-    font-size: 0.95rem;
 }
 
-.placeholder {
-    opacity: 0.7;
+.project-achievement {
+    color: #10B981;
+    font-weight: 500;
+}
+
+.project-description p {
+    color: #d1d5db;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.project-details {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 1rem;
+}
+
+.project-details li {
+    position: relative;
+    padding-left: 1.2rem;
+    margin-bottom: 0.6rem;
+    color: #94a3b8;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.project-details li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #0EA5E9;
+}
+
+.tech-tag {
+    color: #d946ef;
+    font-weight: 500;
+}
+
+.metric {
+    color: #10B981;
+    font-weight: 600;
 }
 
 /* Fun Me Page Styles */
