@@ -1,4 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Fade-in animation for the page
+    document.body.style.opacity = 1;
+    
+    // Apply fade-in classes to elements
+    applyFadeInClasses();
+    
     // Mobile Navigation Toggle
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-links');
@@ -35,25 +41,60 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
-    
-    // Add animation keyframe
-    const style = document.createElement('style');
-    style.innerHTML = `
-        @keyframes navLinkFade {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-    `;
-    document.head.appendChild(style);
 });
 
-// Simple page transitions
+// Apply fade-in classes to content elements
+function applyFadeInClasses() {
+    // Apply to header elements
+    const header = document.querySelector('header');
+    if (header) {
+        header.classList.add('fade-in', 'fade-in-delay-1');
+    }
+    
+    // Apply to profile image if exists
+    const profileImage = document.querySelector('.profile-image');
+    if (profileImage) {
+        profileImage.classList.add('fade-in', 'fade-in-delay-2');
+    }
+    
+    // Apply to social links
+    const socialLinks = document.querySelector('.social-links');
+    if (socialLinks) {
+        socialLinks.classList.add('fade-in', 'fade-in-delay-3');
+    }
+    
+    // Apply to neural network
+    const neuralNetwork = document.querySelector('.neural-network');
+    if (neuralNetwork) {
+        neuralNetwork.classList.add('fade-in', 'fade-in-delay-4');
+    }
+    
+    // Apply to sections
+    const sections = document.querySelectorAll('section');
+    sections.forEach((section, index) => {
+        section.classList.add('fade-in', `fade-in-delay-${index + 2}`);
+    });
+    
+    // Apply to project cards
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach((card, index) => {
+        card.classList.add('fade-in', `fade-in-delay-${index + 3}`);
+    });
+    
+    // Apply to CV sections
+    const cvSections = document.querySelectorAll('.cv-section');
+    cvSections.forEach((section, index) => {
+        section.classList.add('fade-in', `fade-in-delay-${index + 2}`);
+    });
+    
+    // Apply to fun sections
+    const funSections = document.querySelectorAll('.fun-section');
+    funSections.forEach((section, index) => {
+        section.classList.add('fade-in', `fade-in-delay-${index + 2}`);
+    });
+}
+
+// Page transitions for links
 const anchors = document.querySelectorAll('a:not([target="_blank"])');
 
 anchors.forEach(anchor => {
@@ -76,7 +117,3 @@ anchors.forEach(anchor => {
         }, 300);
     });
 });
-
-// Fade in on page load
-document.body.style.transition = 'opacity 0.3s ease';
-document.body.style.opacity = 1;
