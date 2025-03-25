@@ -642,7 +642,6 @@ section p {
 .section-content.reverse {
     display: flex;
     flex-direction: column; /* Stack children vertically */
-    align-items: center;    /* Optional: center items horizontally */
     gap: 20px;
     
 }
