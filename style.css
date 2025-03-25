@@ -641,12 +641,12 @@ section p {
 
 .section-content.reverse {
     display: flex;
-    flex-direction: column; /* Stack children vertically */
+    flex-direction: row-reverse; 
     gap: 20px;
     
 }
 
-flex-direction: row-reverse;
+
 
 .text-content {
     flex: 1;
