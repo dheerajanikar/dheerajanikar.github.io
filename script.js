@@ -9,7 +9,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-links');
     const navLinks = document.querySelectorAll('.nav-links li');
-    
+
+    const metricsData = [
+        { value: '35+', label: 'AI chat agents deployed' },
+        { value: '20+', label: 'Credit unions served' },
+        { value: '10×', label: 'Workflow acceleration' },
+        { value: '∞', label: 'Curiosity for ethical AI' }
+    ];
+
+    const metricsContainer = document.querySelector('[data-metrics]');
+    if (metricsContainer) {
+        metricsContainer.innerHTML = '';
+        metricsData.forEach(({ value, label }) => {
+            const metric = document.createElement('div');
+            metric.className = 'hero-metric';
+
+            const metricValue = document.createElement('span');
+            metricValue.className = 'metric-value';
+            metricValue.textContent = value;
+
+            const metricLabel = document.createElement('span');
+            metricLabel.className = 'metric-label';
+            metricLabel.textContent = label;
+
+            metric.appendChild(metricValue);
+            metric.appendChild(metricLabel);
+            metricsContainer.appendChild(metric);
+        });
+    }
+
     burger.addEventListener('click', () => {
         // Toggle Nav
         nav.classList.toggle('nav-active');
