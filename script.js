@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-links li');
 
     const metricsData = [
-        { value: '35+', label: 'AI chat agents deployed' },
+        { value: '35+', label: 'AI agents deployed' },
         { value: '20+', label: 'Credit unions served' },
         { value: '10×', label: 'Workflow acceleration' },
         { value: '∞', label: 'Curiosity for ethical AI' }
