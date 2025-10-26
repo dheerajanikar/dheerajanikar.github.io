@@ -794,64 +794,172 @@ ul {
     box-shadow: 0 10px 30px rgba(14,165,233,.4);
 }
 
-
-
-.edu-header,
-.exp-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.edu-date,
-.exp-date {
-  font-size: 0.85rem;
-  color: var(--text-muted, #94a3b8);
-}
-
-.education-item,
+/* Experience blocks */
 .experience-item {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  margin-bottom: 1.6rem;
+    border-left: 2px solid rgba(148,163,184,0.22);
+    padding-left: 1rem;
 }
 
-.exp-title,
-.edu-degree {
-  font-weight: 600;
-  color: #e2e8f0;
+.exp-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: .5rem;
+    gap: .5rem 1rem;
+}
+
+.exp-company {
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 0;
+}
+
+.exp-title {
+    color: var(--text-secondary);
+    font-size: .8rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.exp-date {
+    color: var(--text-muted);
+    font-size: .75rem;
+    line-height: 1.4;
+    font-style: italic;
 }
 
 .exp-duties {
-  display: grid;
-  gap: 0.6rem;
-  padding-left: 1.2rem;
-  list-style: disc;
-  color: var(--text-secondary, #cbd5f5);
+    list-style: none;
+    margin: .75rem 0 0;
+    padding: 0;
+}
+.exp-duties li {
+    position: relative;
+    padding-left: 1.2rem;
+    font-size: .8rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+    margin-bottom: .75rem;
+}
+.exp-duties li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--accent-2);
+    font-size: .8rem;
+    line-height: 1.5;
 }
 
-.skill-tag,
-.skill-item {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.3rem 0.6rem;
-  border-radius: 999px;
-  font-size: 0.8rem;
-  background: rgba(124, 58, 237, 0.16);
-  color: #c4b5fd;
+.skill-tag {
+    color: var(--accent-2);
+    font-weight: 500;
 }
 
-.skills-group {
-  margin-bottom: 1.4rem;
+.highlight-metric {
+    color: var(--accent-3);
+    font-weight: 600;
+}
+
+/* Education blocks */
+.education-item {
+    border-left: 2px solid rgba(148,163,184,0.22);
+    padding-left: 1rem;
+    margin-bottom: 2rem;
+}
+
+.edu-header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: .5rem 1rem;
+    margin-bottom: .5rem;
+}
+
+.edu-school {
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 0;
+}
+
+.edu-degree {
+    color: var(--text-secondary);
+    font-size: .8rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.edu-date {
+    color: var(--text-muted);
+    font-size: .75rem;
+    line-height: 1.4;
+    font-style: italic;
+}
+
+.edu-meta {
+    font-size: .8rem;
+    line-height: 1.4;
+    color: var(--text-primary);
+    font-weight: 500;
+    margin-bottom: .5rem;
+}
+
+.edu-gpa {
+    color: var(--accent-3);
+    font-weight: 600;
+}
+
+.edu-courses {
+    font-size: .8rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+    max-width: 40ch;
+}
+
+/* Skills */
+.skills-group h4 {
+    color: var(--text-primary);
+    font-size: .8rem;
+    font-weight: 600;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    margin: 0 0 .5rem;
 }
 
 .skills-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+
+.skills-list .skill-item {
+    background: rgba(14,165,233,0.08);
+    color: var(--text-secondary);
+    font-size: .7rem;
+    line-height: 1.2;
+    font-weight: 500;
+    padding: .4rem .6rem;
+    border-radius: .5rem;
+    border: 1px solid rgba(14,165,233,0.3);
+    box-shadow: 0 15px 30px rgba(14,165,233,.2);
+}
+
+/* Small helper */
+.text-fade {
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+    .cv-body-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ---------------------------- FUN ME PAGE ---------------------------- */
