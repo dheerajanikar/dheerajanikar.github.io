@@ -8,145 +8,212 @@
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
-    <div class="container">
-        <nav class="navbar">
-            <div class="logo">DA</div>
+<body class="site-bg">
+    <!-- Global Nav -->
+    <nav class="nav-shell">
+        <div class="nav-inner">
+            <div class="brand">
+                <div class="brand-mark">DA</div>
+                <div class="brand-text">Dheeraj Anikar</div>
+            </div>
+
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="cv.html">CV</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="fun-me.html">Fun Me</a></li>
             </ul>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
-        </nav>
-        
-        <header>
-            <div class="header-content">
-                <div class="hero-grid">
-                    <div class="hero-text">
-                        <span class="eyebrow">AI Forward Deployed Engineer • Responsible innovation advocate</span>
-                        <h1 class="title">Dheeraj Anikar</h1>
-                        <p class="subtitle">Developing and Deploying human centered agentic systems that work safely and reliably</p>
-                        <p class="hero-description">
-                            I partner with product and AI teams to ship production grade LLM experiences, architect multi-agent intelligence layers, and implement verifiers that keep AI grounded in human goals.
-                        </p>
 
-                        <div class="hero-actions">
-                            <a href="projects.html" class="button primary-button">
-                                <i class="fas fa-rocket"></i>
-                                View Projects
-                            </a>
-                            <a href="cv.html" class="button secondary-button">
-                                <i class="fas fa-file-lines"></i>
-                                Download CV
-                            </a>
-                        </div>
+            <a class="contact-cta" href="mailto:dheerajanikar.12@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+                <span>Contact</span>
+            </a>
 
-                        <div class="hero-metrics" data-metrics></div>
-                        
+            <button class="burger" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
 
-                        <div class="social-links">
-                            <a href="mailto:dheerajanikar.12@gmail.com" class="social-icon email-icon" title="Email Me">
-                                <i class="fas fa-envelope"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/in/dheerajpanikar" target="_blank" class="social-icon linkedin-icon" title="LinkedIn">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                            <a href="https://github.com/dheerajanikar" target="_blank" class="social-icon github-icon" title="GitHub">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://medium.com/@dheerajanikar.12" target="_blank" class="social-icon medium-icon" title="Medium">
-                                <i class="fab fa-medium"></i>
-                            </a>
-                        </div>
+    <!-- Hero -->
+    <header class="hero-shell">
+        <div class="hero-grid">
+            <!-- Left panel -->
+            <section class="hero-card glass-card">
+                <span class="eyebrow">
+                    Forward Deployed AI Engineer · 30+ production agents
+                </span>
+
+                <h1 class="hero-name">
+                    <span class="grad-text">Dheeraj Anikar</span>
+                </h1>
+
+                <p class="tagline">
+                    I build and deploy human-centered AI agents that are safe, auditable, and actually used.
+                </p>
+
+                <p class="blurb">
+                    I work directly with product, infra, and customer teams to take LLM systems from prototype to production — orchestration, eval, compliance, rollout. Most of my work ships into regulated environments like credit unions.
+                </p>
+
+                <!-- Metrics -->
+                <div class="metrics-row">
+                    <div class="metric-chip glass-chip">
+                        <div class="metric-number grad-text">38+</div>
+                        <div class="metric-label">AI agents live</div>
                     </div>
-
-                    <div class="hero-visual">
-                        <div class="profile-container">
-                            <div class="profile-ring"></div>
-                            <div class="profile-image">
-                                <img src="images/profile.jpeg" alt="Dheeraj Anikar">
-                                <div class="profile-glow"></div>
-                            </div>
-                            <div class="floating-badges">
-                                <span class="badge">Generative AI</span>
-                                <span class="badge">LLM Ops</span>
-                                <span class="badge">Agentic Systems</span>
-                            </div>
-                        </div>
-                        <div class="glow-orb orb-1"></div>
-                        <div class="glow-orb orb-2"></div>
+                    <div class="metric-chip glass-chip">
+                        <div class="metric-number grad-text">20+</div>
+                        <div class="metric-label">Institutions deployed</div>
+                    </div>
+                    <div class="metric-chip glass-chip">
+                        <div class="metric-number grad-text">~35%</div>
+                        <div class="metric-label">Call deflection</div>
                     </div>
                 </div>
 
-                <div class="neural-network">
-                    <div class="node"></div>
-                    <div class="node"></div>
-                    <div class="node"></div>
-                    <div class="node"></div>
-                    <div class="node"></div>
-                    <div class="node"></div>
-                    <div class="node"></div>
-                    <div class="node"></div>
-                    <div class="node"></div>
-                    <div class="node"></div>
-                    <div class="node"></div>
-                    <div class="node"></div>
+                <!-- Actions -->
+                <div class="hero-actions">
+                    <a href="projects.html" class="button primary-button">
+                        <i class="fas fa-rocket"></i>
+                        <span>View Projects</span>
+                    </a>
+                    <a href="cv.html" class="button secondary-button">
+                        <i class="fas fa-file-lines"></i>
+                        <span>CV / Experience</span>
+                    </a>
                 </div>
-            </div>
-        </header>
-        
-        <section id="about">
-            <h2>About Me</h2>
-            <p>
-                I'm an AI Engineer passionate about building intelligent systems and exploring the frontiers of AI capabilities. 
-                I am equally passionate about making AI systems smarter and ensuring they don't accidentally decide to <span class="highlight">redecorate the planet</span>.
-            </p>
-            
-            <p>
-                When I'm not implementing <span class="ai-term">AI agents</span> or <span class="ai-term">fine-tuning LLMs</span>, you'll find me diving deep into AI governance and safety discussions – because someone needs to make sure our AI assistants don't get too creative with their interpretations of <span class="highlight">"help humanity"</span>.
-            </p>
-            
-            <p>
-                Armed with a Master's in Electrical Engineering from USC <span class="fact">Fight On! ✌️</span> and a track record of building containment-crushing chatbots at Eltropy, I'm on a mission to bridge the gap between cutting-edge AI capabilities and responsible implementation. 
-                Think of me as the person who asks <span class="highlight">"Should we?"</span> right after someone says <span class="highlight">"We can!"</span>
-            </p>
 
+                <!-- Social -->
+                <div class="hero-social">
+                    <a href="mailto:dheerajanikar.12@gmail.com" class="social-icon" title="Email">
+                        <i class="fas fa-envelope"></i>
+                        <span class="tooltip">Email</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/dheerajpanikar" target="_blank" class="social-icon" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                        <span class="tooltip">LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/dheerajanikar" target="_blank" class="social-icon" title="GitHub">
+                        <i class="fab fa-github"></i>
+                        <span class="tooltip">GitHub</span>
+                    </a>
+                    <a href="https://medium.com/@dheerajanikar.12" target="_blank" class="social-icon" title="Writing">
+                        <i class="fab fa-medium"></i>
+                        <span class="tooltip">Writing</span>
+                    </a>
+                </div>
+            </section>
 
-        </section>
+            <!-- Right panel -->
+            <section class="hero-visual">
+                <div class="pfp-wrapper">
+                    <div class="pfp-glow-ring"></div>
+                    <div class="pfp-card glass-card">
+                        <img src="images/profile.jpeg" alt="Dheeraj Anikar" class="pfp-img">
+                    </div>
 
-        <section id="focus" class="focus-area">
-            <h2>Where I Create Impact</h2>
-            <div class="focus-grid">
-                <article class="focus-card">
-                    <div class="focus-icon" aria-hidden="true">
+                    <div class="pfp-badges">
+                        <span class="mini-badge glass-chip">
+                            <i class="fa-solid fa-cubes"></i> Agent Orchestration
+                        </span>
+                        <span class="mini-badge glass-chip">
+                            <i class="fa-solid fa-shield-halved"></i> Safety &amp; Compliance
+                        </span>
+                        <span class="mini-badge glass-chip">
+                            <i class="fa-solid fa-chart-line"></i> Eval / QA Systems
+                        </span>
+                    </div>
+                </div>
+
+                <div class="orb orb-1"></div>
+                <div class="orb orb-2"></div>
+            </section>
+        </div>
+    </header>
+
+    <!-- What I Do -->
+    <section class="focus-shell">
+        <h2 class="section-title">What I Do in the Field</h2>
+
+        <div class="focus-grid">
+            <article class="focus-card glass-card">
+                <div class="focus-head">
+                    <div class="focus-icon">
                         <i class="fas fa-brain"></i>
                     </div>
-                    <h3>LLM Product Strategy</h3>
-                    <p>Architect end-to-end AI journeys—ideation, evaluation, user flows, and KPI tracking—that transform fuzzy ideas into reliable experiences.</p>
-                </article>
-                <article class="focus-card">
-                    <div class="focus-icon" aria-hidden="true">
+                    <span class="status-chip">Active</span>
+                </div>
+                <h3>LLM Product Strategy</h3>
+                <p>
+                    I turn fuzzy “we should have AI” ideas into production flows:
+                    use cases, eval loops, UX, KPIs, rollout plans.
+                </p>
+            </article>
+
+            <article class="focus-card glass-card">
+                <div class="focus-head">
+                    <div class="focus-icon">
                         <i class="fas fa-shield-check"></i>
                     </div>
-                    <h3>Responsible AI Systems</h3>
-                    <p>Design guardrails, policy engines, and feedback loops so intelligent agents stay compliant, contextual, and human-centered.</p>
-                </article>
-                <article class="focus-card">
-                    <div class="focus-icon" aria-hidden="true">
+                    <span class="status-chip">Deployed</span>
+                </div>
+                <h3>Responsible AI Systems</h3>
+                <p>
+                    Guardrails, verifier agents, policy enforcement,
+                    human-in-the-loop escalation.
+                    Keeps answers compliant and on-policy, not hallucinated.
+                </p>
+            </article>
+
+            <article class="focus-card glass-card">
+                <div class="focus-head">
+                    <div class="focus-icon">
                         <i class="fas fa-diagram-project"></i>
                     </div>
-                    <h3>Scalable AI Platforms</h3>
-                    <p>Lead integrations across data stacks, orchestration layers, and CI/CD so teams can experiment fast—and deploy even faster.</p>
-                </article>
+                    <span class="status-chip">Shipping</span>
+                </div>
+                <h3>Scalable AI Platforms</h3>
+                <p>
+                    I work with infra / integrations teams on orchestration,
+                    RAG, observability, and CI/CD so we can safely ship fast.
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about-shell">
+        <div class="about-grid glass-card">
+            <div class="about-main">
+                <h2>About Me</h2>
+                <p>
+                    I'm an AI Engineer focused on getting intelligent systems
+                    into the hands of real users — and making sure those systems
+                    don’t try to “optimize” humanity out of the loop.
+                </p>
+                <p>
+                    My work blends multi-agent orchestration, retrieval-grounded
+                    generation, and correctness verification in production.
+                    I care about safety and control surfaces just as much
+                    as model IQ.
+                </p>
+                <p class="mission-line">
+                    Mission: ship useful AI that respects constraints.
+                </p>
             </div>
-        </section>
-    </div>
+
+            <aside class="about-side">
+                <ul class="about-facts">
+                    <li><strong>AI SME @ Eltropy</strong> – deployed LLM agents to 20+ credit unions (regulated financial environments)</li>
+                    <li><strong>38+ agents live</strong> – chat, voice, internal assist, QA</li>
+                    <li><strong>M.S. Electrical Engineering, USC ✌️</strong></li>
+                    <li><strong>Focus:</strong> agent safety, eval frameworks, post-deploy monitoring</li>
+                </ul>
+            </aside>
+        </div>
+    </section>
+
     <script src="script.js"></script>
 </body>
 </html>
