@@ -707,26 +707,94 @@ ul {
 }
 
 /* ------------------------------ CV PAGE ------------------------------ */
-.cv-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-bottom: 4rem;
+.cv-shell {
+    max-width: 1120px;
+    margin: 3rem auto 5rem;
+    padding: 0 2rem;
+    display: grid;
+    gap: 2rem;
 }
 
-.cv-section {
-  padding: 2rem;
-  background: rgba(15, 23, 42, 0.72);
-  border: 1px solid rgba(148, 163, 184, 0.2);
-  border-radius: 22px;
-  box-shadow: 0 30px 55px rgba(15, 23, 42, 0.4);
+/* Top intro card */
+.cv-header-card {
+    padding: 2rem 2rem 2.5rem;
 }
 
-.cv-section h3 {
-  margin-top: 0;
-  margin-bottom: 1.4rem;
-  font-size: 1.4rem;
+.cv-name {
+    font-size: clamp(2rem, 1.2vw + 1rem, 2.4rem);
+    line-height: 1.15;
+    font-weight: 600;
+    margin: 0 0 .5rem;
 }
+
+.cv-role {
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 1rem;
+    margin-bottom: .75rem;
+}
+
+.cv-summary {
+    color: var(--text-muted);
+    font-size: .9rem;
+    line-height: 1.6;
+    max-width: 60ch;
+    margin-bottom: 1.25rem;
+}
+
+.cv-meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .6rem;
+}
+
+.cv-meta-chip {
+    font-size: .75rem;
+    font-weight: 500;
+    line-height: 1.2;
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+/* Main 2-col resume grid */
+.cv-body-grid {
+    display: grid;
+    grid-template-columns: minmax(0,1fr) minmax(260px, 320px);
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.cv-left-col,
+.cv-right-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Section headings */
+.cv-section-title {
+    display: flex;
+    align-items: center;
+    font-size: .8rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.cv-section-accent {
+    display: inline-block;
+    width: 8px;
+    height: 28px;
+    background: linear-gradient(180deg, var(--accent-1), var(--accent-2));
+    border-radius: 4px;
+    margin-right: .75rem;
+    box-shadow: 0 10px 30px rgba(14,165,233,.4);
+}
+
+
 
 .edu-header,
 .exp-header {
