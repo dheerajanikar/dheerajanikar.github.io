@@ -922,31 +922,39 @@ ul {
 }
 
 /* Skills */
+.skills-group {
+  margin-bottom: 2rem;
+}
+
 .skills-group h4 {
-    color: var(--text-primary);
-    font-size: .8rem;
-    font-weight: 600;
-    letter-spacing: .05em;
-    text-transform: uppercase;
-    margin: 0 0 .5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.5px;
+  color: var(--text-bright);
 }
 
 .skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: .5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 0.8rem; /* tighter vertical + balanced horizontal spacing */
 }
 
-.skills-list .skill-item {
-    background: rgba(14,165,233,0.08);
-    color: var(--text-secondary);
-    font-size: .7rem;
-    line-height: 1.2;
-    font-weight: 500;
-    padding: .4rem .6rem;
-    border-radius: .5rem;
-    border: 1px solid rgba(14,165,233,0.3);
-    box-shadow: 0 15px 30px rgba(14,165,233,.2);
+.skill-item {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 0.6rem;
+  backdrop-filter: blur(8px);
+  white-space: nowrap;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.skill-item:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--text-bright);
 }
 
 /* Small helper */
