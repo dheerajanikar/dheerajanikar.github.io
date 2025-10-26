@@ -1,121 +1,96 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Fade-in animation for the page
     document.body.style.opacity = 1;
-    
+
     // Apply fade-in classes to elements
     applyFadeInClasses();
-    
+
     // Mobile Navigation Toggle
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-links');
     const navLinks = document.querySelectorAll('.nav-links li');
 
-    const metricsData = [
-        { value: '35+', label: 'AI agents deployed' },
-        { value: '20+', label: 'Credit unions served' },
-        { value: '10×', label: 'Workflow acceleration' },
-        { value: '∞', label: 'Curiosity for ethical AI' }
-    ];
+    if (burger && nav) {
+        burger.addEventListener('click', () => {
+            const isActive = nav.classList.toggle('nav-active');
+            burger.classList.toggle('toggle', isActive);
+            burger.setAttribute('aria-expanded', String(isActive));
 
-    const metricsContainer = document.querySelector('[data-metrics]');
-    if (metricsContainer) {
-        metricsContainer.innerHTML = '';
-        metricsData.forEach(({ value, label }) => {
-            const metric = document.createElement('div');
-            metric.className = 'hero-metric';
-
-            const metricValue = document.createElement('span');
-            metricValue.className = 'metric-value';
-            metricValue.textContent = value;
-
-            const metricLabel = document.createElement('span');
-            metricLabel.className = 'metric-label';
-            metricLabel.textContent = label;
-
-            metric.appendChild(metricValue);
-            metric.appendChild(metricLabel);
-            metricsContainer.appendChild(metric);
+            navLinks.forEach((link, index) => {
+                if (isActive) {
+                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                } else {
+                    link.style.animation = '';
+                }
+            });
         });
-    }
 
-    burger.addEventListener('click', () => {
-        // Toggle Nav
-        nav.classList.toggle('nav-active');
-        
-        // Animate Links
-        navLinks.forEach((link, index) => {
-            if (link.style.animation) {
-                link.style.animation = '';
-            } else {
-                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (event) => {
+            const isClickInsideNav = nav.contains(event.target);
+            const isClickInsideBurger = burger.contains(event.target);
+
+            if (!isClickInsideNav && !isClickInsideBurger && nav.classList.contains('nav-active')) {
+                nav.classList.remove('nav-active');
+                burger.classList.remove('toggle');
+                burger.setAttribute('aria-expanded', 'false');
+
+                navLinks.forEach((link) => {
+                    link.style.animation = '';
+                });
             }
         });
-        
-        // Burger Animation
-        burger.classList.toggle('toggle');
-    });
-    
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', (event) => {
-        const isClickInsideNav = nav.contains(event.target);
-        const isClickInsideBurger = burger.contains(event.target);
-        
-        if (!isClickInsideNav && !isClickInsideBurger && nav.classList.contains('nav-active')) {
-            nav.classList.remove('nav-active');
-            burger.classList.remove('toggle');
-            
-            navLinks.forEach((link) => {
-                link.style.animation = '';
-            });
-        }
-    });
+    }
 });
 
 // Apply fade-in classes to content elements
 function applyFadeInClasses() {
-    // Apply to header elements
-    const header = document.querySelector('header');
-    if (header) {
-        header.classList.add('fade-in', 'fade-in-delay-1');
+    const heroShell = document.querySelector('.hero-shell');
+    if (heroShell) {
+        heroShell.classList.add('fade-in', 'fade-in-delay-1');
     }
-    
-    // Apply to profile image if exists
-    const profileImage = document.querySelector('.profile-image');
-    if (profileImage) {
-        profileImage.classList.add('fade-in', 'fade-in-delay-2');
+
+    const heroCard = document.querySelector('.hero-card');
+    if (heroCard) {
+        heroCard.classList.add('fade-in', 'fade-in-delay-2');
     }
-    
-    // Apply to social links
-    const socialLinks = document.querySelector('.social-links');
-    if (socialLinks) {
-        socialLinks.classList.add('fade-in', 'fade-in-delay-3');
+
+    const heroVisual = document.querySelector('.hero-visual');
+    if (heroVisual) {
+        heroVisual.classList.add('fade-in', 'fade-in-delay-3');
     }
-    
-    // Apply to neural network
-    const neuralNetwork = document.querySelector('.neural-network');
-    if (neuralNetwork) {
-        neuralNetwork.classList.add('fade-in', 'fade-in-delay-4');
+
+    const heroSocial = document.querySelector('.hero-social');
+    if (heroSocial) {
+        heroSocial.classList.add('fade-in', 'fade-in-delay-3');
     }
-    
-    // Apply to sections
-    const sections = document.querySelectorAll('section');
-    sections.forEach((section, index) => {
-        section.classList.add('fade-in', `fade-in-delay-${index + 2}`);
+
+    const focusCards = document.querySelectorAll('.focus-card');
+    focusCards.forEach((card, index) => {
+        card.classList.add('fade-in', `fade-in-delay-${index + 3}`);
     });
-    
-    // Apply to project cards
+
+    const aboutGrid = document.querySelector('.about-grid');
+    if (aboutGrid) {
+        aboutGrid.classList.add('fade-in', 'fade-in-delay-4');
+    }
+
+    // Legacy pages
+    const legacyHeader = document.querySelector('body:not(.site-bg) header');
+    if (legacyHeader) {
+        legacyHeader.classList.add('fade-in', 'fade-in-delay-1');
+    }
+
     const projectCards = document.querySelectorAll('.project-card');
     projectCards.forEach((card, index) => {
         card.classList.add('fade-in', `fade-in-delay-${index + 3}`);
     });
-    
-    // Apply to CV sections
+
     const cvSections = document.querySelectorAll('.cv-section');
     cvSections.forEach((section, index) => {
         section.classList.add('fade-in', `fade-in-delay-${index + 2}`);
     });
-    
-    // Apply to fun sections
+
     const funSections = document.querySelectorAll('.fun-section');
     funSections.forEach((section, index) => {
         section.classList.add('fade-in', `fade-in-delay-${index + 2}`);
