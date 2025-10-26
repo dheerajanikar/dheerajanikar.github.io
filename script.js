@@ -3,28 +3,27 @@
 // ===============================
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Fade page in on load (only if body was initially hidden in CSS)
+    // 1. Fade page in on load (keeps page transitions smooth)
     document.body.style.opacity = 1;
 
     // 2. Animate sections in
     applyFadeInClasses();
 
     // 3. Mobile Navigation Toggle
-    const burger = document.querySelector('.burger');
-    const navList = document.querySelector('.nav-shell .nav-links'); // <ul>
-    const navItems = document.querySelectorAll('.nav-shell .nav-links li'); // <li> children
+    const navShell = document.querySelector('.nav-shell');
+    const shellBurger = navShell ? navShell.querySelector('.burger') : null;
+    const shellNavList = navShell ? navShell.querySelector('.nav-links') : null;
+    const shellNavItems = navShell ? navShell.querySelectorAll('.nav-links li') : [];
 
-    if (burger && navList) {
-        // aria setup for a11y
-        burger.setAttribute('aria-expanded', 'false');
+    if (shellBurger && shellNavList) {
+        shellBurger.setAttribute('aria-expanded', 'false');
 
-        burger.addEventListener('click', () => {
-            const isActive = navList.classList.toggle('nav-active'); // toggle dropdown menu visibility
-            burger.classList.toggle('toggle', isActive);             // animate burger lines
-            burger.setAttribute('aria-expanded', String(isActive));
+        shellBurger.addEventListener('click', () => {
+            const isActive = shellNavList.classList.toggle('nav-active');
+            shellBurger.classList.toggle('toggle', isActive);
+            shellBurger.setAttribute('aria-expanded', String(isActive));
 
-            // animate each nav item sliding in
-            navItems.forEach((item, index) => {
+            shellNavItems.forEach((item, index) => {
                 if (isActive) {
                     item.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
                 } else {
@@ -33,20 +32,39 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // click outside to close on mobile
         document.addEventListener('click', (event) => {
-            const clickedInsideNav = navList.contains(event.target);
-            const clickedBurger = burger.contains(event.target);
+            const clickedInsideNav = shellNavList.contains(event.target);
+            const clickedBurger = shellBurger.contains(event.target);
 
-            if (!clickedInsideNav && !clickedBurger && navList.classList.contains('nav-active')) {
-                navList.classList.remove('nav-active');
-                burger.classList.remove('toggle');
-                burger.setAttribute('aria-expanded', 'false');
+            if (!clickedInsideNav && !clickedBurger && shellNavList.classList.contains('nav-active')) {
+                shellNavList.classList.remove('nav-active');
+                shellBurger.classList.remove('toggle');
+                shellBurger.setAttribute('aria-expanded', 'false');
 
-                navItems.forEach((item) => {
+                shellNavItems.forEach((item) => {
                     item.style.animation = '';
                 });
             }
+        });
+    }
+
+    const legacyNavbar = document.querySelector('.navbar');
+    const legacyBurger = legacyNavbar ? legacyNavbar.querySelector('.burger') : null;
+
+    if (legacyNavbar && legacyBurger) {
+        legacyBurger.setAttribute('aria-expanded', 'false');
+
+        legacyBurger.addEventListener('click', () => {
+            const isOpen = legacyNavbar.classList.toggle('open');
+            legacyBurger.setAttribute('aria-expanded', String(isOpen));
+        });
+
+        const legacyLinks = legacyNavbar.querySelectorAll('.nav-links a');
+        legacyLinks.forEach((link) => {
+            link.addEventListener('click', () => {
+                legacyNavbar.classList.remove('open');
+                legacyBurger.setAttribute('aria-expanded', 'false');
+            });
         });
     }
 
