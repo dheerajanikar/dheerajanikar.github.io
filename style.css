@@ -69,7 +69,8 @@ body.portfolio-page {
 .hero-intro { max-width: 630px; margin: 30px 0 0; font-size: clamp(1.1rem, 1.7vw, 1.35rem); color: var(--muted); line-height: 1.55; }
 .hero-links { display: flex; flex-wrap: wrap; align-items: center; gap: 28px; margin-top: 39px; }
 .button-dark, .button-light { display: inline-flex; align-items: center; gap: 14px; padding: 16px 21px; border-radius: 0; font-size: .9rem; font-weight: 750; letter-spacing: .02em; transition: transform .2s, background .2s, box-shadow .2s; }
-.button-dark { color: #fff; background: var(--ink); }
+.portfolio-page .button-dark { width: fit-content; flex: 0 0 auto; color: #fff; background: var(--ink); }
+.portfolio-page .button-dark span { color: #fff; -webkit-text-fill-color: #fff; }
 .button-dark:hover, .button-light:hover { transform: translateY(-3px); box-shadow: 5px 5px 0 rgba(16,23,25,.32); }
 .action-button { border: 1px solid currentColor; text-transform: uppercase; }
 .hero-portrait { margin: 0; }
@@ -104,7 +105,8 @@ body.portfolio-page {
 .closing-panel { width: min(1160px, calc(100% - 48px)); margin: 0 auto 40px; padding: clamp(42px, 7vw, 85px); color: #f7f5ef; background: #182322; }
 .closing-panel h2 { font-size: clamp(3rem, 6vw, 6.1rem); }
 .closing-panel .kicker { color: #f49e67; }
-.button-light { margin-top: 35px; color: var(--ink); background: #f7f5ef; }
+.portfolio-page .button-light { width: fit-content; margin-top: 35px; color: var(--ink); background: #f7f5ef; }
+.portfolio-page .button-light span { color: var(--ink); -webkit-text-fill-color: var(--ink); }
 .closing-copy { max-width: 600px; margin: 25px 0 0; color: rgba(247,245,239,.72); font-size: 1.1rem; }
 .portfolio-footer { display: flex; justify-content: space-between; gap: 24px; padding: 24px 0 42px; color: var(--muted); font-size: .78rem; }
 .portfolio-footer div { display: flex; gap: 20px; }
